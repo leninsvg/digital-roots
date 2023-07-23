@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using DigitalRoots.Api;
+using DigitalRoots.Api.Middlewares;
 using DigitalRoots.Business.Services;
 using DigitalRoots.Persistence;
 using DigitalRoots.Persistence.Repositories;
@@ -43,5 +44,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.MigrateDatabase();
+
+app.UseMiddleware<ErrorHandlerMiddleware>();
 
 app.Run();
