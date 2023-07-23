@@ -15,8 +15,14 @@ public class PetController : ControllerBase
         _petService = petService;
     }
 
+    [HttpGet("{ownerId:long}")]
+    public ActionResult<PetModel> GetPets([FromRoute] long ownerId)
+    {
+        return Ok(this._petService.GetPets(ownerId));
+    }
+    
     [HttpPost]
-    public ActionResult<PetModel> Cre([FromBody] CreatePetModel pet)
+    public ActionResult<PetModel> CreatePet([FromBody] CreatePetModel pet)
     {
         return Ok(this._petService.CreatePet(pet));
     }

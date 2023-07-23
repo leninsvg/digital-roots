@@ -28,4 +28,14 @@ public class PetService : IPetService
         this._petRepository.CreatePet(petEntity);
         return petEntity.MapToPetModel();
     }
+
+    public List<PetModel> GetPets(long ownerId)
+    {
+        if (!this._personRepository.ExistPerson(ownerId))
+        {
+            throw new CustomAttributeFormatException(ExceptionsSettings.OwnerNotFound);
+        }
+        return this._petRepository.GetPets(ownerId)
+            .Select(x => x.MapToPetModel()).ToList();
+    }
 }
