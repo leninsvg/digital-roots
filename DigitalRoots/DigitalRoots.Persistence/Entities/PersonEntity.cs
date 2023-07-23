@@ -17,5 +17,5 @@ public class PersonEntity : BaseEntity
     [Required]
     public int Age { get; set; }
 
-    private ICollection<PeetEntity> Peets { get; set; }
+    private ICollection<PetEntity> Peets { get; set; }
 }

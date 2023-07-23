@@ -4,8 +4,8 @@ using DigitalRoots.Utils.Enums;
 
 namespace DigitalRoots.Persistence.Entities;
 
-[Table("Peet")]
-public class PeetEntity : BaseEntity
+[Table("Pet")]
+public class PetEntity : BaseEntity
 {
     public long OwnerId { get; set; }
 
@@ -20,5 +20,5 @@ public class PeetEntity : BaseEntity
     public PeetCategoryEnum Category { get; set; }
 
     [ForeignKey("OwnerId")]
-    private PersonEntity Owner { get; set; }
+    public PersonEntity Owner { get; set; }
 }
