@@ -4,6 +4,7 @@ using DigitalRoots.Models;
 using DigitalRoots.Persistence.Entities;
 using DigitalRoots.Persistence.Repositories;
 using DigitalRoots.Utils;
+using DigitalRoots.Utils.Enums;
 
 namespace DigitalRoots.Business.Services;
 
@@ -36,6 +37,16 @@ public class PetService : IPetService
             throw new CustomAttributeFormatException(ExceptionsSettings.OwnerNotFound);
         }
         return this._petRepository.GetPets(ownerId)
+            .Select(x => x.MapToPetModel()).ToList();
+    }
+    
+    public List<PetModel> GetPets(long ownerId, PeetCategoryEnum category)
+    {
+        if (!this._personRepository.ExistPerson(ownerId))
+        {
+            throw new CustomAttributeFormatException(ExceptionsSettings.OwnerNotFound);
+        }
+        return this._petRepository.GetPets(ownerId, category)
             .Select(x => x.MapToPetModel()).ToList();
     }
 }

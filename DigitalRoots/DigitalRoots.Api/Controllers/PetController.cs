@@ -1,5 +1,6 @@
 using DigitalRoots.Business.Services;
 using DigitalRoots.Models;
+using DigitalRoots.Utils.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DigitalRoots.Api.Controllers;
@@ -19,6 +20,12 @@ public class PetController : ControllerBase
     public ActionResult<PetModel> GetPets([FromRoute] long ownerId)
     {
         return Ok(this._petService.GetPets(ownerId));
+    }
+    
+    [HttpGet("{ownerId:long}/{category}")]
+    public ActionResult<PetModel> GetPets([FromRoute] long ownerId, [FromRoute] PeetCategoryEnum category)
+    {
+        return Ok(this._petService.GetPets(ownerId, category));
     }
     
     [HttpPost]
