@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\DigitalRoots.Models\DigitalRoots.Models.csproj"/>
-        <ProjectReference Include="..\DigitalRoots.Persistence\DigitalRoots.Persistence.csproj"/>
+        <ProjectReference Include="..\DigitalRoots.Models\DigitalRoots.Models.csproj" />
+        <ProjectReference Include="..\DigitalRoots.Persistence\DigitalRoots.Persistence.csproj" />
     </ItemGroup>
 
 </Project>

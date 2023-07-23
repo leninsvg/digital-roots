@@ -16,6 +16,11 @@ public class PersonRepository : IPersonRepository
         return _applicationDbContext.People.FirstOrDefault(x => x.Id == id);
     }
 
+    public bool ExistPerson(long id)
+    {
+        return _applicationDbContext.People.Any(x => x.Id == id);
+    }
+
     public List<PersonEntity> GetPeople()
     {
         return _applicationDbContext.People.ToList();

@@ -15,6 +15,7 @@ builder.Services.AddScoped<IPetRepository, PetRepository>();
 
 // Services
 builder.Services.AddScoped<IPersonService, PersonService>();
+builder.Services.AddScoped<IPetService, PetService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
