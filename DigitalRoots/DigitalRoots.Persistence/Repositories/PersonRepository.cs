@@ -20,4 +20,10 @@ public class PersonRepository: IPersonRepository
     {
         return this._applicationDbContext.People.ToList();
     }
+    
+    public void CreatePerson(PersonEntity person)
+    {
+        this._applicationDbContext.People.Add(person);
+        this._applicationDbContext.SaveChanges();
+    }
 }

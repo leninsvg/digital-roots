@@ -7,4 +7,5 @@ public interface IPetRepository
 {
     List<PetEntity> GetPets(long ownerId);
     List<PetEntity> GetPets(long ownerId, PeetCategoryEnum category);
+    void CreatePet(PetEntity pet);
 }

@@ -25,4 +25,10 @@ public class PetRepository : IPetRepository
             .Where(x => x.Category == category)
             .ToList();
     }
+    
+    public void CreatePet(PetEntity pet)
+    {
+        this._applicationDbContext.Pets.Add(pet);
+        this._applicationDbContext.SaveChanges();
+    }
 }

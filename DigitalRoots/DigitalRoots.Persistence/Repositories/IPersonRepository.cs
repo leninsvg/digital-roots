@@ -6,4 +6,5 @@ public interface IPersonRepository
 {
     PersonEntity GetPerson(long id);
     List<PersonEntity> GetPeople(long id);
+    void CreatePerson(PersonEntity person);
 }
