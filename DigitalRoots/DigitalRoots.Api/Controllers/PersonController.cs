@@ -20,4 +20,10 @@ public class PersonController : ControllerBase
     {
         return Ok(_personService.GetPerson(personId));
     }
+    
+    [HttpPost]
+    public ActionResult<PersonModel> CreatePerson([FromBody] CreatePersonModel person)
+    {
+        return Ok(_personService.CreatePerson(person));
+    }
 }

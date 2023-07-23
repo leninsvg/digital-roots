@@ -5,12 +5,11 @@ namespace DigitalRoots.Business.Mappers;
 
 public static class PersonMapper
 {
-    public static PersonEntity MapToPersonEntity(this PersonModel person)
+    public static PersonEntity MapToPersonEntity(this CreatePersonModel person)
     {
         return new PersonEntity
         {
             Age = person.Age,
-            Id = person.Id,
             FirstName = person.FirstName,
             LastName = person.LastName
         };

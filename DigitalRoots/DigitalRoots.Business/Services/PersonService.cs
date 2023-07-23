@@ -26,6 +26,13 @@ public class PersonService : IPersonService
         return personEntity.MapToPersonModel();
     }
 
+    public PersonModel CreatePerson(CreatePersonModel person)
+    {
+        PersonEntity personEntity = person.MapToPersonEntity();
+        this._personRepository.CreatePerson(personEntity);
+        return personEntity.MapToPersonModel();
+    }
+
     public PersonModel GetPeople()
     {
         throw new NotImplementedException();

@@ -5,5 +5,6 @@ namespace DigitalRoots.Business.Services;
 public interface IPersonService
 {
     PersonModel GetPerson(long personId);
+    PersonModel CreatePerson(CreatePersonModel person);
     PersonModel GetPeople();
 }
