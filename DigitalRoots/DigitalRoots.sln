@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalRoots.Models", "Digi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalRoots.Utils", "DigitalRoots.Utils\DigitalRoots.Utils.csproj", "{5CA74875-8DAF-43F4-843D-5C837A20DC1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalRoots.Bussiness", "DigitalRoots.Bussiness\DigitalRoots.Bussiness.csproj", "{8F3AB74B-E3AC-40C8-AEA2-49A6E92AFC4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalRoots.Business", "DigitalRoots.Business\DigitalRoots.Business.csproj", "{8F3AB74B-E3AC-40C8-AEA2-49A6E92AFC4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

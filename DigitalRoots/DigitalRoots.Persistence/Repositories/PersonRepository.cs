@@ -2,7 +2,7 @@ using DigitalRoots.Persistence.Entities;
 
 namespace DigitalRoots.Persistence.Repositories;
 
-public class PersonRepository: IPersonRepository
+public class PersonRepository : IPersonRepository
 {
     private readonly ApplicationDbContext _applicationDbContext;
 
@@ -13,17 +13,17 @@ public class PersonRepository: IPersonRepository
 
     public PersonEntity GetPerson(long id)
     {
-        return this._applicationDbContext.People.FirstOrDefault(x => x.Id == id);
+        return _applicationDbContext.People.FirstOrDefault(x => x.Id == id);
     }
 
     public List<PersonEntity> GetPeople(long id)
     {
-        return this._applicationDbContext.People.ToList();
+        return _applicationDbContext.People.ToList();
     }
-    
+
     public void CreatePerson(PersonEntity person)
     {
-        this._applicationDbContext.People.Add(person);
-        this._applicationDbContext.SaveChanges();
+        _applicationDbContext.People.Add(person);
+        _applicationDbContext.SaveChanges();
     }
 }

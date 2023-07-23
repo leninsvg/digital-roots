@@ -1,24 +1,23 @@
 ﻿using DigitalRoots.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace DigitalRoots.Api
+namespace DigitalRoots.Api;
+
+public static class MigrationManager
 {
-    public static class MigrationManager
+    public static WebApplication MigrateDatabase(this WebApplication webApp)
     {
-        public static WebApplication MigrateDatabase(this WebApplication webApp)
+        using IServiceScope scope = webApp.Services.CreateScope();
+        using ApplicationDbContext appContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        try
         {
-            using var scope = webApp.Services.CreateScope();
-            using var appContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-            try
-            {
-                appContext.Database.Migrate();
-            }
-            catch (Exception e)
-            {
-                //Log errors or do anything you think it's needed
-                throw e;
-            }
-            return webApp;
+            appContext.Database.Migrate();
         }
+        catch (Exception e)
+        {
+            //Log errors or do anything you think it's needed
+            throw e;
+        }
+        return webApp;
     }
 }

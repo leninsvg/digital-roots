@@ -14,21 +14,21 @@ public class PetRepository : IPetRepository
 
     public List<PetEntity> GetPets(long ownerId)
     {
-        return this._applicationDbContext.Pets
+        return _applicationDbContext.Pets
             .Where(x => x.OwnerId == ownerId).ToList();
     }
 
     public List<PetEntity> GetPets(long ownerId, PeetCategoryEnum category)
     {
-        return this._applicationDbContext.Pets
+        return _applicationDbContext.Pets
             .Where(x => x.OwnerId == ownerId)
             .Where(x => x.Category == category)
             .ToList();
     }
-    
+
     public void CreatePet(PetEntity pet)
     {
-        this._applicationDbContext.Pets.Add(pet);
-        this._applicationDbContext.SaveChanges();
+        _applicationDbContext.Pets.Add(pet);
+        _applicationDbContext.SaveChanges();
     }
 }
