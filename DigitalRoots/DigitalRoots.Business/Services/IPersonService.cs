@@ -6,5 +6,5 @@ public interface IPersonService
 {
     PersonModel GetPerson(long personId);
     PersonModel CreatePerson(CreatePersonModel person);
-    PersonModel GetPeople();
+    List<PersonModel> GetPeople();
 }

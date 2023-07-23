@@ -15,6 +15,12 @@ public class PersonController : ControllerBase
         _personService = personService;
     }
 
+    [HttpGet]
+    public ActionResult<List<PersonModel>> GetPeople()
+    {
+        return Ok(_personService.GetPeople());
+    }
+    
     [HttpGet("{personId:long}")]
     public ActionResult<PersonModel> GetPerson([FromRoute] long personId)
     {

@@ -16,7 +16,7 @@ public class PersonRepository : IPersonRepository
         return _applicationDbContext.People.FirstOrDefault(x => x.Id == id);
     }
 
-    public List<PersonEntity> GetPeople(long id)
+    public List<PersonEntity> GetPeople()
     {
         return _applicationDbContext.People.ToList();
     }

@@ -33,8 +33,9 @@ public class PersonService : IPersonService
         return personEntity.MapToPersonModel();
     }
 
-    public PersonModel GetPeople()
+    public List<PersonModel> GetPeople()
     {
-        throw new NotImplementedException();
+        return this._personRepository.GetPeople()
+            .Select(x => x.MapToPersonModel()).ToList();
     }
 }
