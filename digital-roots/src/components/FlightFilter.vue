@@ -6,8 +6,8 @@ import { useAppStore } from '@/store/app';
 
 const originCity = ref('');
 const destinationCity = ref('');
-const startDate = ref(new Date());
-const returnDate = ref(new Date());
+const startDate = ref(moment().format('YYYY-MM-DD'));
+const returnDate = ref(moment(startDate.value).format('YYYY-MM-DD'));
 const state = useAppStore()
 const cities = state.cities;
 const search = () => {

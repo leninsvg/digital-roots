@@ -2,6 +2,7 @@
 import { useRoute }    from 'vue-router';
 import { useAppStore } from '@/store/app';
 import { ref }         from 'vue';
+import router          from '@/router';
 
 const route = useRoute()
 const state = useAppStore()
@@ -19,7 +20,7 @@ const returnFlights = flights.filter(x => x.origin === destination && x.destinat
 </script>
 
 <template>
-  <v-btn :to="'/'">Change filter</v-btn>
+  <v-btn @click="router.back()">Change filter</v-btn>
   <div>
     Please select the tickets for continue
   </div>
@@ -28,7 +29,7 @@ const returnFlights = flights.filter(x => x.origin === destination && x.destinat
   </v-btn>
   <div v-if="departureFlights.length && returnFlights.length" class="d-flex">
     <div>
-      <h1>Departure {{startDate}}</h1>
+      <h1>Departure {{ startDate }}</h1>
       <v-card
         v-for="flight in departureFlights"
         @click="departureTicket = flight.id"
@@ -42,7 +43,7 @@ const returnFlights = flights.filter(x => x.origin === destination && x.destinat
       ></v-card>
     </div>
     <div>
-      <h1>Return {{ returnDate}}</h1>
+      <h1>Return {{ returnDate }}</h1>
       <v-card
         v-for="flight in returnFlights"
         @click="returnTicket = flight.id"
