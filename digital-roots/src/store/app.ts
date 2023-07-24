@@ -2,10 +2,10 @@
 import { defineStore } from 'pinia'
 import moment          from 'moment';
 
-let id = 0;
+let id = 1;
 export const useAppStore = defineStore('app', {
   state: () => ({
-    cities: ['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming'],
+    cities: ['California', 'Colorado'],
     tickets: [{
       id: id++,
       date: moment().format('YYYY-MM-DD'),
@@ -17,7 +17,7 @@ export const useAppStore = defineStore('app', {
       duration: 20
     }, {
       id: id++,
-      date: moment().format('YYYY-MM-DD'),
+      date: moment().add('days','1').format('YYYY-MM-DD'),
       origin: 'California',
       destination: 'Colorado',
       price: 200,
@@ -26,7 +26,7 @@ export const useAppStore = defineStore('app', {
       duration: 20
     }, {
       id: id++,
-      date: moment().format('YYYY-MM-DD'),
+      date: moment().add('days','2').format('YYYY-MM-DD'),
       origin: 'California',
       destination: 'Colorado',
       price: 200,
@@ -35,7 +35,7 @@ export const useAppStore = defineStore('app', {
       duration: 20
     }, {
       id: id++,
-      date: moment().format('YYYY-MM-DD'),
+      date: moment().add('days','3').format('YYYY-MM-DD'),
       origin: 'California',
       destination: 'Colorado',
       price: 200,
@@ -44,7 +44,7 @@ export const useAppStore = defineStore('app', {
       duration: 20
     }, {
       id: id++,
-      date: moment().format('YYYY-MM-DD'),
+      date: moment().add('days','4').format('YYYY-MM-DD'),
       origin: 'California',
       destination: 'Colorado',
       price: 200,
@@ -53,7 +53,7 @@ export const useAppStore = defineStore('app', {
       duration: 20
     }, {
       id: id++,
-      date: moment().format('YYYY-MM-DD'),
+      date: moment().add('days','5').format('YYYY-MM-DD'),
       origin: 'California',
       destination: 'Colorado',
       price: 200,
@@ -62,7 +62,7 @@ export const useAppStore = defineStore('app', {
       duration: 20
     }, {
       id: id++,
-      date: moment().format('YYYY-MM-DD'),
+      date: moment().add('days','6').format('YYYY-MM-DD'),
       origin: 'California',
       destination: 'Colorado',
       price: 200,
@@ -71,14 +71,229 @@ export const useAppStore = defineStore('app', {
       duration: 20
     }, {
       id: id++,
-      date: moment().format('YYYY-MM-DD'),
+      date: moment().add('days','7').format('YYYY-MM-DD'),
       origin: 'California',
       destination: 'Colorado',
       price: 200,
       airline: 'Tame',
+      scales: 1,
+      duration: 20
+    },{
+      id: id++,
+      date: moment().format('YYYY-MM-DD'),
+      origin: 'California',
+      destination: 'Colorado',
+      price: 400,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','1').format('YYYY-MM-DD'),
+      origin: 'California',
+      destination: 'Colorado',
+      price: 400,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','2').format('YYYY-MM-DD'),
+      origin: 'California',
+      destination: 'Colorado',
+      price: 400,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','3').format('YYYY-MM-DD'),
+      origin: 'California',
+      destination: 'Colorado',
+      price: 400,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','4').format('YYYY-MM-DD'),
+      origin: 'California',
+      destination: 'Colorado',
+      price: 400,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','5').format('YYYY-MM-DD'),
+      origin: 'California',
+      destination: 'Colorado',
+      price: 400,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','6').format('YYYY-MM-DD'),
+      origin: 'California',
+      destination: 'Colorado',
+      price: 400,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','7').format('YYYY-MM-DD'),
+      origin: 'California',
+      destination: 'Colorado',
+      price: 400,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 200,
+      airline: 'Tame',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','1').format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 200,
+      airline: 'Tame',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','2').format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 200,
+      airline: 'Tame',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','3').format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 200,
+      airline: 'Tame',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','4').format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 200,
+      airline: 'Tame',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','5').format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 200,
+      airline: 'Tame',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','6').format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 400,
+      airline: 'Tame',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','7').format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 900,
+      airline: 'Tame',
+      scales: 1,
+      duration: 20
+    },{
+      id: id++,
+      date: moment().format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 900,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','1').format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 900,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','2').format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 600,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','3').format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 600,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','4').format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 600,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','5').format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 599,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','6').format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 599,
+      airline: 'Avianca',
+      scales: 1,
+      duration: 20
+    }, {
+      id: id++,
+      date: moment().add('days','7').format('YYYY-MM-DD'),
+      origin: 'Colorado',
+      destination: 'California',
+      price: 599,
+      airline: 'Avianca',
       scales: 1,
       duration: 20
     }]
-    //
   })
 })
