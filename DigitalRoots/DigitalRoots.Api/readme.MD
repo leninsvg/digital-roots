@@ -16,6 +16,11 @@
 - Mientras más creativo seas con tú código, mientras más robusto sea, cubras la mayoría de casos (aún no pensados), vas a tener una mejor calificación de este
   challenge.
 
-### Generate migrations
+### Requisites
 
-dotnet ef migrations add InitialCreate -c ApplicationDbContext -s ../DigitalRoots.Api --output-dir Migrations
+#### Generate migrations
+
+`dotnet ef migrations add InitialCreate -c ApplicationDbContext -s ../DigitalRoots.Api --output-dir Migrations`
+#### Install Database
+
+`docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Nada1234*' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu`
