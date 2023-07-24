@@ -2,12 +2,14 @@
 import { ref } from 'vue';
 import router  from '@/router';
 import moment  from 'moment';
+import { useAppStore } from '@/store/app';
 
 const originCity = ref('California');
 const destinationCity = ref('Colorado');
 const startDate = ref(new Date());
 const returnDate = ref(new Date());
-const cities = ['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming'];
+const state = useAppStore()
+const cities = state.cities;
 const search = () => {
   router.push({
     name: 'FlightsPage',
@@ -18,8 +20,6 @@ const search = () => {
       returnDate: moment(returnDate.value).format('YYYY-MM-DD')
     }
   })
-  // router.go(1);
-  console.log(originCity.value, destinationCity.value, startDate.value, returnDate.value);
 }
 </script>
 
